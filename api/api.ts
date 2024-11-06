@@ -11,7 +11,7 @@ interface Cripto {
 
 const coinMarketCapUrl =
   "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest";
-const coinMarketCapApiKey = "YOUR-API-KEY";
+const coinMarketCapApiKey = "3f640653-8b8f-4bf3-acad-5d5b20c6e1dc";
 
 // Função para buscar os dados das criptomoedas
 const getCriptoDados = async (): Promise<Cripto[]> => {
@@ -39,31 +39,4 @@ const getCriptoDados = async (): Promise<Cripto[]> => {
   }
 };
 
-// Função para buscar os dados históricos
-const getHistoricoDados = async (criptoId: string) => {
-  try {
-    const responseHistorico = await axios.get(
-      `https://api.coingecko.com/api/v3/coins/${criptoId}/market_chart`,
-      {
-        params: {
-          vs_currency: "usd",
-          days: "30",
-        },
-      }
-    );
-
-    const historicoDados = responseHistorico.data.prices.map(
-      (preco: [number, number]) => ({
-        timestamp: preco[0],
-        price: preco[1],
-      })
-    );
-
-    return historicoDados;
-  } catch (error) {
-    console.error("Erro ao buscar dados históricos:", error);
-    return [];
-  }
-};
-
-export { getCriptoDados, getHistoricoDados };
+export { getCriptoDados };
