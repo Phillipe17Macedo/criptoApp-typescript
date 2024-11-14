@@ -88,3 +88,9 @@ projeto/
 Este projeto foi desenvolvido como parte de uma apresentação sobre React Native e ReactJS.
 
 by Phillipe Macedo
+
+
+ CHAVE API >>
+const coinMarketCapUrl =
+  "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest";
+const coinMarketCapApiKey = "3f640653-8b8f-4bf3-acad-5d5b20c6e1dc";
